@@ -9,34 +9,34 @@ def check_fermi_theory():
     def input_number_not_word_or_symbol():
 
         try:
-            n = int(input("Введите число, а не букв(у/ы) " + s + ": "))
-            if n < 3:
+            number_local = int(input("Введите число, а не букв(у/ы) " + s + ": "))
+            if number_local < 3:
                 raise MyException
         except ValueError:
-            n = input_number_not_word_or_symbol()
+            number_local = input_number_not_word_or_symbol()
         except MyException:
-            n = input_number_more_than_two()
-        return n
+            number_local = input_number_more_than_two()
+        return number_local
 
     def input_number_more_than_two():
         try:
-            n = int(input('Введите натуральное число ' + s + ' больше двух: '))
-            if n < 3:
+            number_local = int(input('Введите натуральное число ' + s + ' больше двух: '))
+            if number_local < 3:
                 raise MyException
         except ValueError:
-            n = input_number_not_word_or_symbol()
+            number_local = input_number_not_word_or_symbol()
         except MyException:
-            n = input_number_more_than_two()
-        return n
+            number_local = input_number_more_than_two()
+        return number_local
 
     for i in ["a", "b", "c", "n"]:
 
         try:
             s = i
-            n2 = int(input("Введите " + i + ": "))
-            if n2 < 3:
+            number_global = int(input("Введите " + i + ": "))
+            if number_global < 3:
                 raise MyException
-            number.append(n2)
+            number.append(number_global)
 
         except ValueError:
             number.append(int(input_number_not_word_or_symbol()))
